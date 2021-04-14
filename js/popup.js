@@ -46,12 +46,31 @@
     if (unlock) {
       popupActive.classList.remove("open");
       if (doUnlock) {
-        bodyUnlock();
+        bodyUnLock();
       }
     }
   };
 
   const bodyLock = () => {
-    const lockPaddingValue  = window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
+
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add("lock");
+    unlock = false;
+    setTimeout(() => {
+      unlock = true;
+    }, timeout);
   };
+
+const bodyUnLock=()=>{
+  setTimeout(()=>{
+    if(lockPadding.length>0){
+    for(leti = 0; i<lockPadding.length; i++){
+      const el = lockPadding[i];
+      el.style.paddingRight="0px";
+    }
+  }
+  body.style.paddingRight="0px"
+  body.classList.remove("lock")
+  },timeout)
+}
 })();
