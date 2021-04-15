@@ -5,7 +5,7 @@
 
   let unlock = true;
 
-  const timeout = 800;
+  const timeout = 500;
 
   if (popupLinks.length > 0) {
     for (let i = 0; i < popupLinks.length; i++) {
@@ -20,23 +20,29 @@
     }
   }
 
-  const popupCloseIcon = document.querySelectorAll(".close-popup");
+  const popupCloseIcon = document.querySelector(".close-popup");
   if (popupCloseIcon.length > 0) {
+    console.log(popupCloseIcon)
     for (let i; i < popupCloseIcon.length; i++) {
+      console.log("qwerty")
       const el = popupCloseIcon[i];
       el.addEventListener("click", (e) => {
-        popupCloseIcon(el.closest(".popup"));
-        e.preventDefault();
+        
+       
+        popupClose(el.closest(".popup"));
+         e.preventDefault();
       });
     }
   }
 
   const popupOpen = (curentPopup) => {
     if (curentPopup && unlock) {
+      console.log("h",unlock)
       curentPopup.classList.add("open");
       curentPopup.addEventListener("click", (e) => {
         if (!e.target.closest(".popup__content")) {
           popupClose(e.target.closest(".popup"));
+          console.log("h",unlock)
         }
       });
     }
