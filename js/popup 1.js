@@ -1,13 +1,12 @@
-(() => {
+(function () {
   const popupLinks = document.querySelectorAll(".popup-link");
   const body = document.querySelector("body");
-  const headerTools = document.querySelector(".header__tools");
   const lockPadding = document.querySelectorAll(".lock-padding");
-  console.log(lockPadding);
+
   let unlock = true;
 
   const timeout = 500;
-  //ищу все ссылки на попап
+
   if (popupLinks.length > 0) {
     for (let i = 0; i < popupLinks.length; i++) {
       const popupLink = popupLinks[i];
@@ -21,27 +20,42 @@
     }
   }
 
-  const popupCloseIcon = document.querySelectorAll(".close-popup");
+  const popupCloseIcon = document.querySelector(".close-popup");
   if (popupCloseIcon.length > 0) {
-    for (let i = 0; i < popupCloseIcon.length; i++) {
+    console.log(popupCloseIcon)
+    for (let i; i < popupCloseIcon.length; i++) {
+      console.log("qwerty")
       const el = popupCloseIcon[i];
       el.addEventListener("click", (e) => {
-        console.log("close");
-        popupClose(e.target.closest(".popup"));
-        e.preventDefault();
+        
+       
+        popupClose(el.closest(".popup"));
+         e.preventDefault();
       });
     }
   }
 
+
+
+
+
+
+
+
+
+
+
+
+  
+
   const popupOpen = (curentPopup) => {
     if (curentPopup && unlock) {
-      console.log("h", unlock);
+      console.log("h",unlock)
       curentPopup.classList.add("open");
-      bodyLock();
       curentPopup.addEventListener("click", (e) => {
         if (!e.target.closest(".popup__content")) {
           popupClose(e.target.closest(".popup"));
-          console.log("hh", unlock);
+          console.log("h",unlock)
         }
       });
     }
@@ -57,29 +71,25 @@
   };
 
   const bodyLock = () => {
-    const lockPaddingValue =
-      window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
 
     body.style.paddingRight = lockPaddingValue;
-    headerTools.style.paddingRight = lockPaddingValue;
-    console.log(lockPaddingValue);
-    header.classList.add("lock");
+    body.classList.add("lock");
     unlock = false;
     setTimeout(() => {
       unlock = true;
     }, timeout);
   };
 
-  const bodyUnLock = () => {
-    setTimeout(() => {
-      if (lockPadding.length > 0) {
-        for (leti = 0; i < lockPadding.length; i++) {
-          const el = lockPadding[i];
-          el.style.paddingRight = "0px";
-        }
-      }
-      header.style.paddingRight = "0px";
-      body.classList.remove("lock");
-    }, timeout);
-  };
+const bodyUnLock=()=>{
+  setTimeout(()=>{
+    if(lockPadding.length>0){
+    for(leti = 0; i<lockPadding.length; i++){
+      const el = lockPadding[i];
+      el.style.paddingRight="0px";
+    }
+  }
+  body.style.paddingRight="0px"
+  body.classList.remove("lock")
+  },timeout)
+}
 })();

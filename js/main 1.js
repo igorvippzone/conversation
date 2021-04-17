@@ -1,24 +1,16 @@
-(() => {
+(function () {
   const headerBackground = document.getElementById("headerBackground");
   const headerTools = document.getElementById("headerTools");
-  const headerFeedback = document.getElementById("feedback");
 
-  const scrollOpacity = (scroll) => {
+  const scrollOpacity = () => {
     const heightOfWindow = window.innerHeight;
     const contentScrolled = window.pageYOffset;
     const total = contentScrolled / heightOfWindow;
+    const resultOpacity = 1 - total * 2;
 
-    const total1 = 1 - total * 2;
+    if (resultOpacity < 0 || resultOpacity > 1) return;
 
-    // console.log(total, "||||", total1);
-
-    if (total < 0) {
-      scroll.style.opacity = 1;
-    } else if (total > 1) {
-      scroll.style.opacity = 0;
-    } else {
-      scroll.style.opacity = total1;
-    }
+    headerBackground.style.opacity = contentScrolled <= 0 ? 1 : resultOpacity;
   };
 
   const toolsOpacity = () => {
@@ -31,8 +23,7 @@
   };
 
   const scrollFunc = () => {
-    // scrollOpacity(headerFeedback);
-    scrollOpacity(headerBackground);
+    scrollOpacity();
     toolsOpacity();
   };
 
