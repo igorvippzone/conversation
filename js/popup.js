@@ -1,10 +1,10 @@
 (() => {
   const popupLinks = document.querySelectorAll(".popup-link");
+  const html = document.querySelector("html");
   const body = document.querySelector("body");
+
   const headerTools = document.querySelector(".header__tools");
-  const headerImg = document.querySelector(".header__img");
-  const lockPadding = document.querySelectorAll(".lock-padding");
-  console.log(lockPadding);
+
   let unlock = true;
 
   const timeout = 500;
@@ -60,10 +60,8 @@
   const bodyLock = () => {
     const lockPaddingValue =
       window.innerWidth - document.querySelector(".wrapper").offsetWidth + "px";
-
-    // body.style.paddingRight = lockPaddingValue;
-    headerImg.style.paddingRight = lockPaddingValue;
-    // headerTools.style.paddingRight = lockPaddingValue;
+    body.style.paddingRight = lockPaddingValue;
+    headerTools.style.paddingRight = lockPaddingValue;
     console.log(lockPaddingValue);
     body.classList.add("lock");
     unlock = false;
@@ -74,15 +72,8 @@
 
   const bodyUnLock = () => {
     setTimeout(() => {
-      if (lockPadding.length > 0) {
-        for (let i = 0; i < lockPadding.length; i++) {
-          const el = lockPadding[i];
-          el.style.paddingRight = "0px";
-          // body.style.paddingRight = "0px";
-        }
-      }
-      // header.style.paddingRight = "0px";
       body.style.paddingRight = "0px";
+      headerTools.style.paddingRight = "0px";
       body.classList.remove("lock");
     }, timeout);
   };

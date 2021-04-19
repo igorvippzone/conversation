@@ -12,8 +12,6 @@
 
 <body>
   <div class=" wrapper">
-
-
     <header class="header" id="header">
       <div class="header__img parallax" id="headerBackground"></div>
       <div class="header__tools" id="headerTools">
@@ -58,8 +56,8 @@
                     fill="#181716" />
                 </svg>
               </a>
-              <a class="users__link login popup-link" href="#popup"><svg width="20" height="25" viewBox="0 0 20 25"
-                  fill="none" xmlns="http://www.w3.org/2000/svg">
+              <a class="users__link login " href="#"><svg width="20" height="25" viewBox="0 0 20 25" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
 
                   <g mask="url(#mask0)">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -75,7 +73,7 @@
 
       <div class=" header__feedback container " id="feedback">
         <h1 class="feedback__title">Ты - классная!</h1>
-        <a class="feedback__btn" href="#">Обратная связь</a>
+        <a class="feedback__btn popup-link" href="#popup">Обратная связь</a>
       </div>
     </header>
 
@@ -582,7 +580,7 @@
         <div class="popup__content">
           <a href="#header" class="popup__close close-popup">x</a>
           <form class="popup__form" action="">
-            <h2>Напишите нам</h2>
+            <h2 class="popup__title">Напиши нам</h2>
             <label for="lastname">Имя:</label><input type="text" name="lastname" id="lastname" placeholder="Ваше имя">
             <label for="phone">Телефон:</label><input type="text" name="lastname" id="phone" placeholder="Ваше имя"
               required>
