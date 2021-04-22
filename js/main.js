@@ -48,7 +48,6 @@
   };
 
   const scrollFunc = () => {
-    // scrollOpacity(headerFeedback);
     scrollOpacity(headerBackground);
     toolsOpacity();
   };
