@@ -23,9 +23,26 @@
 
   const toolsOpacity = () => {
     const contentScrolled = window.pageYOffset;
-    if (contentScrolled >= headerTools.offsetHeight) {
+
+    const widthOfWindow = window.innerWidth;
+
+    if (widthOfWindow <= 570 && contentScrolled <= headerTools.offsetHeight) {
+      console.log("qwe", widthOfWindow);
+
+      headerTools.style.backgroundColor = "transparent";
+    } else if (
+      widthOfWindow <= 570 &&
+      contentScrolled >= headerTools.offsetHeight
+    ) {
       headerTools.style.backgroundColor = "rgba(255, 255, 255, 1)";
-    } else {
+    }
+
+    if (widthOfWindow > 570 && contentScrolled >= headerTools.offsetHeight) {
+      headerTools.style.backgroundColor = "rgba(255, 255, 255, 1)";
+    } else if (
+      widthOfWindow > 570 &&
+      contentScrolled < headerTools.offsetHeight
+    ) {
       headerTools.style.backgroundColor = "rgba(255, 255, 255, .9)";
     }
   };
@@ -35,6 +52,8 @@
     scrollOpacity(headerBackground);
     toolsOpacity();
   };
+
+  window.addEventListener(`resize`, toolsOpacity);
 
   window.addEventListener("scroll", scrollFunc);
 })();

@@ -1,8 +1,6 @@
 (() => {
   const popupLinks = document.querySelectorAll(".popup-link");
-  const html = document.querySelector("html");
   const body = document.querySelector("body");
-
   const headerTools = document.querySelector(".header__tools");
 
   let unlock = true;
