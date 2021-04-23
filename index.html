@@ -530,6 +530,17 @@
         dolor eaque deleniti ea vero! Dignissimos, esse necessitatibus iste cumque explicabo cum adipisci atque?
         Assumenda quos odit nesciunt molestiae? Obcaecati minima distinctio reprehenderit voluptatibus ipsam fuga iste
         cupiditate quod tenetur enim, non deserunt neque dolores modi rem ducimus qui consectetur tempore. Quam, itaque
+   
+       
+        sunt?
+        Consectetur tempore vel consequatur iure veritatis ut, cupiditate non cum quis fugit facere quibusdam nostrum
+        neque illum harum doloremque in enim quod magni voluptate esse velit asperiores obcaecati. Ducimus, officiis!
+        Dolorum, libero architecto. Corporis, qui reiciendis cum atque pariatur architecto. Illum, obcaecati accusamus,
+        quidem optio adipisci animi aut atque veritatis explicabo corporis corrupti excepturi sit beatae quibusdam eius
+        dolore reprehenderit.
+        Vel reprehenderit exercitationem recusandae mollitia quisquam sapiente eos velit ratione dolores, culpa
+        accusamus
+        cupiditate quod tenetur enim, non deserunt neque dolores modi rem ducimus qui consectetur tempore. Quam, itaque
         reiciendis?
         Fuga quas, doloribus dolore sequi nulla repellat quod consequuntur ex aliquam mollitia quaerat minus vero
         reiciendis temporibus vel placeat facilis alias quia? Enim explicabo repudiandae fuga accusantium aperiam omnis
@@ -896,23 +907,23 @@
     <div class="popup write__popup" id="popup">
       <div class="popup__body">
         <div class="popup__content">
-          <a href="#header" class="popup__close close-popup">x</a>
-          <form class="popup__form" action="">
+          <a href="#header" class="popup__close close-popup"><img src="images/close.svg" alt=""></a>
+          <form class="popup__form" action="https://jsonplaceholder.typicode.com/posts" method="post">
             <h2 class="popup__title">Напиши нам</h2>
-            <label for="lastname">Имя:</label><input type="text" name="lastname" id="lastname" placeholder="Ваше имя">
-            <label for="phone">Телефон:</label><input type="text" name="lastname" id="phone" placeholder="Ваше имя"
+            <label for="lastname">Имя:</label><input type="text" name="lastname" id="lastname" placeholder="" pattern="[A-Za-zА-Яа-яЁё]	{,100}" required>
+            <label for="phone">Телефон:</label><input type="number" name="phone" id="phone" placeholder=""
               required>
-            <label for="mail">Эл. почта:</label><input type="text" name="lastname" id="mail" placeholder="Ваше имя">
+            <label for="mail">Эл. почта:</label><input type="email" name="lastname" id="mail" placeholder="">
 
             <label for="message">Сообщение:</label>
             <textarea name="comment" cols="40" rows="3" id="message" placeholder="Ваше имя"></textarea>
 
-            <input type="checkbox" name="lastname" id="checkbox"><label for="checkbox">Проставляя «галку» и далее
+            <input type="checkbox" name="lastname" id="checkbox"><label for="checkbox" class="checkbox-popup">Проставляя «галку» и далее
               нажимая
               кнопку
               «Принимаю», я даю согласие в его полном изложении на обработку через сайт своих персональных
               данных.</label>
-            <button class="submit" type="submit" disabled="disabled">Отправить</button>
+            <button class="submit" type="submit" >Отправить</button>
           </form>
         </div>
       </div>
