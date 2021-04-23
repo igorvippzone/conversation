@@ -5,11 +5,8 @@
 
 
   const validate = (input) =>{
-    let a = input.value;
-  if (a.length <= 0) {
-    input.classList.add("error");
+
   }
-  }
-  // console.log(name.setCustomValidity("1"))
+
   window.addEventListener("input", validate)
 })();

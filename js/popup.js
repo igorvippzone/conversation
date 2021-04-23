@@ -6,7 +6,7 @@
   let unlock = true;
 
   const timeout = 500;
-  //ищу все ссылки на попап
+ 
   if (popupLinks.length > 0) {
     for (let i = 0; i < popupLinks.length; i++) {
       const popupLink = popupLinks[i];
@@ -34,7 +34,6 @@
 
   const popupOpen = (curentPopup) => {
     if (curentPopup && unlock) {
-      console.log("h", unlock);
       curentPopup.classList.add("open");
       bodyLock();
       curentPopup.addEventListener("click", (e) => {
