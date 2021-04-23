@@ -3,7 +3,7 @@
   const headerTools = document.getElementById("headerTools");
   const headerFeedback = document.getElementById("feedback");
 
-  const scrollOpacity = (scroll) => {
+  const backgroundOpacity = (scroll) => {
     const heightOfWindow = window.innerHeight;
     const contentScrolled = window.pageYOffset;
     const total = contentScrolled / heightOfWindow;
@@ -48,7 +48,7 @@
   };
 
   const scrollFunc = () => {
-    scrollOpacity(headerBackground);
+    backgroundOpacity(headerBackground);
     toolsOpacity();
   };
 
